@@ -8,8 +8,6 @@ const app = new Hono<{
 import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 
-
-
 app.get('/', (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL
