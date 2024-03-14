@@ -1,8 +1,20 @@
 import { Hono } from 'hono'
+const app = new Hono<{
+  Bindings: {
+    DATABASE_URL: string
+  }
+}>()
 
-const app = new Hono()
+import { PrismaClient } from '@prisma/client/edge'
+import { withAccelerate } from '@prisma/extension-accelerate'
+
+
 
 app.get('/', (c) => {
+  const prisma = new PrismaClient({
+    datasourceUrl: c.env.DATABASE_URL
+  }).$extends(withAccelerate())
+  console.log(prisma)
   return c.text('Hello Hono!')
 })
 
