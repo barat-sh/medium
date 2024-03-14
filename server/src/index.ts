@@ -8,11 +8,16 @@ const app = new Hono<{
 import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 
-app.get('/', (c) => {
+const DB_Connect =async (c:any) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL
   }).$extends(withAccelerate())
-  console.log(prisma)
+  console.log("Connected to prisma...!")
+  return prisma
+}
+
+app.get('/', async(c) => {
+  const Prisma = await DB_Connect(c)
   return c.text('Hello Hono!')
 })
 
