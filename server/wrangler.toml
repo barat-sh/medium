@@ -1,7 +1,9 @@
 name = "server"
 compatibility_date = "2023-12-01"
 
-# [vars]
+[vars]
+DATABASE_URL = "prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiYjIzZDNiMzAtMWYwNC00Njg2LWI1ZmEtYWQyMmYwMmRhYmE3IiwidGVuYW50X2lkIjoiYzkzZjE1YjQ5OTVkYzdlNzA4NTRiMTBjNDNjOThlZTFkN2RiMmNkN2FlNzY3NzE0MjdlZGY0ZmM0NTk3OTVlNCIsImludGVybmFsX3NlY3JldCI6IjhjZGYyOTk4LWQ4NmEtNGZhYy1hNzAzLTQ1Zjk0YTg1ODVjYSJ9.nIKSsaYJKqtOs4q7QSc7hQkl82yNM9Dc7xL1ozQ-Jng"
+
 # [[kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
 # id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
